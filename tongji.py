@@ -38,10 +38,10 @@ def get_pv_uv():
     uv = json.loads(req.text)["body"]["data"][0]["result"]["items"][1][0][1]
     # 写入文件
     f1 = open("pvuv.txt", 'a')
-    file_content = "pv: " + str(pv) + " uv: " + str(uv) + "\n"
+    file_content = yesterday + " pv: " + str(pv) + " uv: " + str(uv) + "\n"
     f1.write(file_content)
     f1.close()
-    return pv, uv
+    return yesterday, pv, uv
 
 
 def send_dingding():
